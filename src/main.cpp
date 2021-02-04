@@ -1,6 +1,6 @@
 //
 // File: main.cpp
-// Description: Implementation of the Minimal Minesweeper game.
+// Description: main file for the Minimal Minesweeper game.
 //
 
 #include <SFML/Graphics.hpp>

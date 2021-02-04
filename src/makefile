@@ -6,8 +6,7 @@ ODIR=obj
 
 LIBS=-lsfml-graphics -lsfml-window -lsfml-system
 
-_DEPS = hellomake.h
-DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
+DEPS = board.h config.h config_internal.h sprite_config.h sprite_manager.h
 
 OBJ = main.o board.o sprite_manager.o
 

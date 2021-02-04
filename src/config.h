@@ -5,7 +5,8 @@
 //      After making changes, it is necessary to recompile the program.
 //
 
-#pragma once
+#ifndef CONFIG_H
+#define CONFIG_H
 
 #include <SFML/Graphics.hpp>
 //
@@ -45,3 +46,7 @@ const int   NUM_COLS        = 15;
 //
 const int GAME_FRAMERATE        = 60;
 const int GAME_CELLTOMINERATIO  = 10;
+
+
+
+#endif // CONFIG_H

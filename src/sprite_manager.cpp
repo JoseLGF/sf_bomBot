@@ -16,6 +16,7 @@ void SpriteManager::loadTextures(){
         cout << "Error loading texture " << spritePath << endl; \
     }
     #include "sprite_config.h"
+	#undef SPRITE_DEF
 }
 
 void SpriteManager::initSprites(){
@@ -23,13 +24,10 @@ void SpriteManager::initSprites(){
     #define SPRITE_DEF(spriteName, textureName, spritePath) \
         spriteName.setTexture(textureName);
     #include "sprite_config.h"
+	#undef SPRITE_DEF
 }
 
 void SpriteManager::init(){
-    rectangle.setSize(CELL_SIZE);
-    rectangle.setFillColor(CELL_COLOR);
-    clr_rectangle.setSize(CELL_SIZE);
-    clr_rectangle.setFillColor(COLOR_CLR_RCTNGL);
 
     sprt_dead.setPosition(emojiPosition_x, emojiPosition_y);
     sprt_hppy.setPosition(emojiPosition_x, emojiPosition_y);
@@ -87,8 +85,8 @@ void SpriteManager::draw(sf::RenderWindow& window, Board* board){
                 board->isGameOver()             // game is completed or over
             )
             &&
-            board->isMine(index)        &&  // cell has no mine
-            !board->isFlagged(index)       // cell is not flagged
+            board->isMine(index)        &&      // cell has no mine
+            !board->isFlagged(index)            // cell is not flagged
         )
         {
             sprt_bomb.setPosition(window_x, window_y);
@@ -124,8 +122,6 @@ void SpriteManager::draw(sf::RenderWindow& window, Board* board){
             window.draw(sprt_hppy);
         }
 
-
-
     }
     }
 
@@ -146,5 +142,3 @@ void SpriteManager::draw(sf::RenderWindow& window, Board* board){
     timSprite->setPosition(TIMER_HUNS_POS_X,TIMER_HUNS_POS_Y);
     window.draw(*timSprite);
 }
-
-// EOF

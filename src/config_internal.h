@@ -5,7 +5,8 @@
 //      This file should not be changed by the user.
 //
 
-#pragma once
+#ifndef CONFIG_INTERNAL_H
+#define CONFIG_INTERNAL_H
 
 #include "config.h"
 
@@ -22,4 +23,4 @@ const int  TIMER_TENS_POS_Y = (CELL_HEIGHT+CELL_SPACING)*(NUM_ROWS);
 const int  TIMER_HUNS_POS_X = CELL_SPACING + (CELL_WIDTH+CELL_SPACING)*0;
 const int  TIMER_HUNS_POS_Y = (CELL_HEIGHT+CELL_SPACING)*(NUM_ROWS);
 
-
+#endif // CONFIG_INTERNAL_H
